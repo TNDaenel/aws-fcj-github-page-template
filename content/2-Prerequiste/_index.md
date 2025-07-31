@@ -1,21 +1,40 @@
 ---
 title : "Preparation "
-date : "`r Sys.Date()`"
+date: 2025-07-29
+
 weight : 2
 chapter : false
-pre : " <b> 2. </b> "
+pre : " <b> 2.4 </b> "
 ---
 
+
 {{% notice info %}}
-You need to create 1 Linux instance on the public subnet and 1 Window instance on the private subnet to perform this lab.
+You need to prepare the source code for your web system (ReactJS + NodeJS + MongoDB) along with necessary AWS resources to deploy this project.
 {{% /notice %}}
 
-To learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:
-  - [About Amazon EC2](https://000004.awsstudygroup.com/en/)
-  - [Works with Amazon VPC](https://000003.awsstudygroup.com/en/)
+To deploy the fullstack e-commerce system on AWS, you should have:
 
-In order to use System Manager to manage our window instances in particular and our instances in general on AWS, we need to give permission to our instances to be able to work with System Manager. In this preparation, we will also proceed to create an IAM Role to grant permissions to instances that can work with System Manager.
+* Source code for the frontend (ReactJS) and backend (NodeJS/Express)
+* CI/CD configuration using GitHub Actions
+* AWS services ready: EC2, S3, IAM, Route 53
+* *(Optional)* MongoDB Atlas if you don't want to host MongoDB on EC2
+
+You can refer to the following lab guides to help you set up the required resources:
+
+* [Introduction to Amazon EC2](https://000004.awsstudygroup.com/vi/)
+* [Working with Amazon S3 and Route 53](https://000005.awsstudygroup.com/vi/)
+* [Implementing CI/CD with GitHub Actions](https://000006.awsstudygroup.com/vi/)
+
+To allow your CI/CD pipeline and instances to operate securely and effectively, you need to create an **IAM Role/User** with proper permissions to access EC2, S3, and other AWS services.
+
 
 ### Content
-  - [Prepare VPC and EC2](2.1-createec2/)
-  - [Create IAM Role](2.2-createiamrole/)
+
+* [Prepare project source and structure](2.1-project-structure/)
+* [Create S3 Bucket for frontend hosting](2.2-create-s3/)
+* [Launch EC2 Instance to host backend](2.3-create-ec2/)
+* [Create IAM Role for deployment permission](2.4-create-iam/)
+* [Create MongDB Atlas](2.5-mongDB-Atlas/)
+
+
+
